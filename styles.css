@@ -1,0 +1,493 @@
+/* ============================================
+   1. Reset / Base
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #0D0D12;
+  --color-surface: #1A1A22;
+  --color-primary: #FF6B00;
+  --color-primary-hover: #FF8C42;
+  --color-text: #F5F5F7;
+  --color-text-muted: #A6A6B0;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   2. Typography
+   ============================================ */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ============================================
+   3. Layout — Header & Nav
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(13, 13, 18, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-surface);
+}
+
+.site-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-right: auto;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+  padding: 0.3rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================
+   3. Layout — Hero
+   ============================================ */
+.hero {
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin: 0 auto 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ============================================
+   3. Layout — Sections & Grid
+   ============================================ */
+main {
+  width: 100%;
+}
+
+.gallery-section,
+.submit-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  margin-bottom: 0.25rem;
+}
+
+.submit-intro {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================================
+   4. Components — Filter Bar
+   ============================================ */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.filter-btn {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--color-surface);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active-filter {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ============================================
+   4. Components — Build Cards
+   ============================================ */
+.build-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.build-card.hidden {
+  display: none;
+}
+
+.build-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.build-card:hover .build-image {
+  transform: scale(1.05);
+}
+
+.build-info {
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.build-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.build-owner {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+}
+
+.build-story {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-top: 0.6rem;
+}
+
+/* ============================================
+   4. Components — Reactions
+   ============================================ */
+.reactions {
+  padding: 0.75rem 1.25rem;
+}
+
+.like-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--color-surface);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.like-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.like-btn.liked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ============================================
+   4. Components — Comments
+   ============================================ */
+.comments {
+  padding: 0 1.25rem 1.25rem;
+  margin-top: auto;
+}
+
+.comment-list {
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+.comment-item {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comment-item strong {
+  color: var(--color-text);
+}
+
+.comment-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.comment-name {
+  width: 40%;
+  flex-grow: 1;
+  flex-basis: 120px;
+}
+
+.comment-input {
+  flex: 1 1 160px;
+}
+
+.comment-name,
+.comment-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-surface);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.comment-name::placeholder,
+.comment-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.comment-name:focus,
+.comment-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
+}
+
+/* ============================================
+   4. Components — Buttons
+   ============================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.post-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+}
+
+/* ============================================
+   4. Components — Submission Form
+   ============================================ */
+.build-form {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: grid;
+  gap: 1.25rem;
+  max-width: 640px;
+}
+
+.build-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-muted);
+}
+
+.build-form input,
+.build-form textarea,
+.build-form select {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-surface);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.build-form input::placeholder,
+.build-form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.build-form input:focus,
+.build-form textarea:focus,
+.build-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.2);
+}
+
+.select-container {
+  position: relative;
+}
+
+.submit-btn {
+  justify-self: start;
+}
+
+.submission-confirmation {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ============================================
+   4. Components — Footer
+   ============================================ */
+.site-footer {
+  border-top: 1px solid var(--color-surface);
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   5. Interactive State Styles
+   ============================================ */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   6. Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.25rem 2.5rem;
+  }
+
+  .gallery-section,
+  .submit-section {
+    padding: 2rem 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .brand {
+    flex-basis: 100%;
+  }
+
+  .build-form {
+    padding: 1.25rem;
+  }
+}
