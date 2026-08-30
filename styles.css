@@ -284,6 +284,8 @@ main {
 .comment-list {
   list-style: none;
   margin-bottom: 0.75rem;
+  max-height: 8.5rem;
+  overflow-y: auto;
 }
 
 .comment-item {
