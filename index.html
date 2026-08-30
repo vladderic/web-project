@@ -3,14 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Project Spotlights — Car Build Forum</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <h1>My Website</h1>
-  <p>Your content will go here.</p>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="#gallery" class="brand">Project Spotlights</a>
+      <a href="#gallery" class="nav-link">Browse Builds</a>
+      <a href="#submit" class="nav-link">Submit Yours</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">Built With Passion. Driven By Community.</h1>
+    <p class="hero-subtitle">A place for car enthusiasts to share their builds, ask questions, and get the advice they need.</p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn btn-primary">Browse Builds</a>
+      <a href="#submit" class="btn btn-secondary">Submit Yours</a>
+    </div>
+  </section>
+
+  <main>
+
+    <section id="gallery" class="gallery-section">
+      <h2 class="section-title">Project Spotlights</h2>
+      <div class="filter-bar" aria-label="Filter builds by category">
+        <button class="filter-btn active-filter" data-category="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-category="muscle" aria-pressed="false">Muscle</button>
+        <button class="filter-btn" data-category="jdm" aria-pressed="false">JDM</button>
+        <button class="filter-btn" data-category="truck" aria-pressed="false">Trucks</button>
+      </div>
+
+      <div id="gallery-grid" class="gallery-grid">
+
+        <article class="build-card" data-category="muscle">
+          <img class="build-image" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=60" alt="A 1990 Ford Mustang resprayed in violet">
+          <div class="build-info">
+            <h3 class="build-title">Project 5.0</h3>
+            <span class="build-owner">by Alex</span>
+            <p class="build-story">After three years of saving and a lot of YouTube rabbit holes, my first build is finally on the road. Dropped in a new 5.0 V8, upgraded the suspension with coilovers, and resprayed it 'Violent Violet'. It's not the fastest, but it's mine.</p>
+          </div>
+          <div class="reactions">
+            <button class="like-btn" aria-label="Like this build">👍 <span class="like-count">12</span></button>
+          </div>
+          <div class="comments">
+            <ul class="comment-list">
+              <li class="comment-item"><strong>Mia:</strong> That violet looks incredible!</li>
+              <li class="comment-item"><strong>Dave:</strong> Nice first build, congrats.</li>
+            </ul>
+            <form class="comment-form">
+              <input type="text" class="comment-name" placeholder="Your name" aria-label="Your name">
+              <input type="text" class="comment-input" placeholder="Add a comment..." aria-label="Add a comment">
+              <button type="button" class="btn btn-primary post-btn">Post</button>
+            </form>
+          </div>
+        </article>
+
+        <article class="build-card" data-category="jdm">
+          <img class="build-image" src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=60" alt="A 1998 Honda Civic hatchback">
+          <div class="build-info">
+            <h3 class="build-title">The Sleeper Civic</h3>
+            <span class="build-owner">by Jordan</span>
+            <p class="build-story">Everyone thinks it's a beat-up daily driver. Under the hood it's a K-swap with a big turbo — 400 horses in a car nobody looks twice at. My favorite part is the look on people's faces at the lights.</p>
+          </div>
+          <div class="reactions">
+            <button class="like-btn" aria-label="Like this build">👍 <span class="like-count">25</span></button>
+          </div>
+          <div class="comments">
+            <ul class="comment-list">
+              <li class="comment-item"><strong>Sam:</strong> A true sleeper. Love it.</li>
+            </ul>
+            <form class="comment-form">
+              <input type="text" class="comment-name" placeholder="Your name" aria-label="Your name">
+              <input type="text" class="comment-input" placeholder="Add a comment..." aria-label="Add a comment">
+              <button type="button" class="btn btn-primary post-btn">Post</button>
+            </form>
+          </div>
+        </article>
+
+        <article class="build-card" data-category="truck">
+          <img class="build-image" src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=60" alt="A lifted Toyota Tacoma off-road truck in the desert">
+          <div class="build-info">
+            <h3 class="build-title">Desert Fox</h3>
+            <span class="build-owner">by Chris</span>
+            <p class="build-story">Built for overlanding trips with my dad. Long-travel suspension, skid plates, and a roof tent. It's hauled us across three states and never let us down. Comfort in the dirt is underrated.</p>
+          </div>
+          <div class="reactions">
+            <button class="like-btn" aria-label="Like this build">👍 <span class="like-count">18</span></button>
+          </div>
+          <div class="comments">
+            <ul class="comment-list">
+              <li class="comment-item"><strong>Priya:</strong> The roof tent is the dream.</li>
+            </ul>
+            <form class="comment-form">
+              <input type="text" class="comment-name" placeholder="Your name" aria-label="Your name">
+              <input type="text" class="comment-input" placeholder="Add a comment..." aria-label="Add a comment">
+              <button type="button" class="btn btn-primary post-btn">Post</button>
+            </form>
+          </div>
+        </article>
+
+        <article class="build-card" data-category="muscle">
+          <img class="build-image" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=60" alt="A 2004 BMW M3 on a race track">
+          <div class="build-info">
+            <h3 class="build-title">Apex M3</h3>
+            <span class="build-owner">by Lena</span>
+            <p class="build-story">A track-day toy I bought as a rusted shell. Rebuilt the S54 engine, added carbon bucket seats and a half-cage. Ran my first track event last month and I'm hooked. Brakes and tires are the real heroes here.</p>
+          </div>
+          <div class="reactions">
+            <button class="like-btn" aria-label="Like this build">👍 <span class="like-count">30</span></button>
+          </div>
+          <div class="comments">
+            <ul class="comment-list">
+              <li class="comment-item"><strong>Raj:</strong> Track days are addictive!</li>
+            </ul>
+            <form class="comment-form">
+              <input type="text" class="comment-name" placeholder="Your name" aria-label="Your name">
+              <input type="text" class="comment-input" placeholder="Add a comment..." aria-label="Add a comment">
+              <button type="button" class="btn btn-primary post-btn">Post</button>
+            </form>
+          </div>
+        </article>
+
+        <article class="build-card" data-category="jdm">
+          <img class="build-image" src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=60" alt="A 1992 Mazda Miata with a retro 90s wrap">
+          <div class="build-info">
+            <h3 class="build-title">Neon Dream</h3>
+            <span class="build-owner">by Tessa</span>
+            <p class="build-story">Budget build done right. Coilovers, sticky tires, and a clean wrap with a retro 90s vibe. No crazy power, just pure handling. Corners feel like a go-kart. Best $4,000 I've ever spent.</p>
+          </div>
+          <div class="reactions">
+            <button class="like-btn" aria-label="Like this build">👍 <span class="like-count">21</span></button>
+          </div>
+          <div class="comments">
+            <ul class="comment-list">
+              <li class="comment-item"><strong>Omar:</strong> That wrap is so clean.</li>
+              <li class="comment-item"><strong>Kit:</strong> Go-kart handling is the best kind.</li>
+            </ul>
+            <form class="comment-form">
+              <input type="text" class="comment-name" placeholder="Your name" aria-label="Your name">
+              <input type="text" class="comment-input" placeholder="Add a comment..." aria-label="Add a comment">
+              <button type="button" class="btn btn-primary post-btn">Post</button>
+            </form>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="submit" class="submit-section">
+      <h2 class="section-title">Submit Your Build</h2>
+      <p class="submit-intro">Show off your project and let the community weigh in.</p>
+      <form id="build-form" class="build-form">
+        <label for="build-title">Build Title
+          <input type="text" id="build-title" name="title" placeholder="e.g. Project 5.0" required>
+        </label>
+        <label for="build-image">Image URL
+          <input type="url" id="build-image" name="image" placeholder="https://..." required>
+        </label>
+        <label for="build-owner">Your Name
+          <input type="text" id="build-owner" name="owner" placeholder="Your name" required>
+        </label>
+        <label for="build-story">Build Story
+          <textarea id="build-story" name="story" placeholder="Tell us about your build..." rows="4" required></textarea>
+        </label>
+        <label for="build-category">Category
+          <select id="build-category" name="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="muscle">Muscle</option>
+            <option value="jdm">JDM</option>
+            <option value="truck">Trucks</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary submit-btn">Submit Your Build</button>
+        <p id="confirmation-msg" class="submission-confirmation" role="status" hidden>Your build has been submitted. Thanks for sharing!</p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Project Spotlights. Built for the car community.</p>
+  </footer>
 
 </body>
 </html>
