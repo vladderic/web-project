@@ -2,7 +2,7 @@
 
 ## 1. Website Concept
 
-**Website Name:** Project Spotlights
+**Website Name:** Project Spotlight
 
 **Website Topic:** Car Discussion Forum - a place for car enthusiasts to share and discuss car builds
 

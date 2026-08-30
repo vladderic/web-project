@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Spotlights — Car Build Forum</title>
+  <title>Project Spotlight — Car Build Forum</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -11,7 +11,7 @@
 
   <header class="site-header">
     <nav class="site-nav">
-      <a href="#gallery" class="brand">Project Spotlights</a>
+      <a href="#gallery" class="brand">Project Spotlight</a>
       <a href="#gallery" class="nav-link">Browse Builds</a>
       <a href="#submit" class="nav-link">Submit Yours</a>
     </nav>
@@ -29,18 +29,19 @@
   <main>
 
     <section id="gallery" class="gallery-section">
-      <h2 class="section-title">Project Spotlights</h2>
+      <h2 class="section-title">Project Spotlight</h2>
       <div class="filter-bar" aria-label="Filter builds by category">
         <button class="filter-btn active-filter" data-category="all" aria-pressed="true">All</button>
         <button class="filter-btn" data-category="muscle" aria-pressed="false">Muscle</button>
         <button class="filter-btn" data-category="jdm" aria-pressed="false">JDM</button>
         <button class="filter-btn" data-category="truck" aria-pressed="false">Trucks</button>
+        <button class="filter-btn" data-category="euro" aria-pressed="false">Euro</button>
       </div>
 
       <div id="gallery-grid" class="gallery-grid">
 
         <article class="build-card" data-category="muscle">
-          <img class="build-image" src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=60" alt="A 1990 Ford Mustang resprayed in violet">
+          <img class="build-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3A-jKXfPsLdkVfPtJU07CiyzvditBgZtytdTgSEZYMfTSP-VoO8NNCxE&s=10" alt="A 1990 Ford Mustang resprayed in violet">
           <div class="build-info">
             <h3 class="build-title">Project 5.0</h3>
             <span class="build-owner">by Alex</span>
@@ -63,7 +64,7 @@
         </article>
 
         <article class="build-card" data-category="jdm">
-          <img class="build-image" src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=60" alt="A 1998 Honda Civic hatchback">
+          <img class="build-image" src="https://i.pinimg.com/736x/9f/41/6a/9f416a0beb28f571db9a874ecb9c87d8.jpg" alt="A 1998 Honda Civic hatchback">
           <div class="build-info">
             <h3 class="build-title">The Sleeper Civic</h3>
             <span class="build-owner">by Jordan</span>
@@ -85,7 +86,7 @@
         </article>
 
         <article class="build-card" data-category="truck">
-          <img class="build-image" src="https://images.unsplash.com/photo-1547721064-da6cfb341d50?auto=format&fit=crop&w=800&q=60" alt="A lifted Toyota Tacoma off-road truck in the desert">
+          <img class="build-image" src="https://i.pinimg.com/736x/9f/79/38/9f7938e51b4a7f9c32b52941f8943e29.jpg" alt="A lifted Toyota Tacoma off-road truck in the desert">
           <div class="build-info">
             <h3 class="build-title">Desert Fox</h3>
             <span class="build-owner">by Chris</span>
@@ -106,8 +107,8 @@
           </div>
         </article>
 
-        <article class="build-card" data-category="muscle">
-          <img class="build-image" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=60" alt="A 2004 BMW M3 on a race track">
+        <article class="build-card" data-category="euro">
+          <img class="build-image" src="https://i.pinimg.com/736x/23/f6/bc/23f6bcaaed5bf63448a6826788e5af2f.jpg" alt="A 2004 BMW M3 on a race track">
           <div class="build-info">
             <h3 class="build-title">Apex M3</h3>
             <span class="build-owner">by Lena</span>
@@ -129,7 +130,7 @@
         </article>
 
         <article class="build-card" data-category="jdm">
-          <img class="build-image" src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=60" alt="A 1992 Mazda Miata with a retro 90s wrap">
+          <img class="build-image" src="https://images.fitmentindustries.com/web-compressed/711972-1-1992-mx-5-miata-mazda-base-truhart-air-air-suspension-klutch-sl2-chrome.jpg" alt="A 1992 Mazda Miata with a retro 90s wrap">
           <div class="build-info">
             <h3 class="build-title">Neon Dream</h3>
             <span class="build-owner">by Tessa</span>
@@ -176,6 +177,7 @@
             <option value="muscle">Muscle</option>
             <option value="jdm">JDM</option>
             <option value="truck">Trucks</option>
+            <option value="euro">Euro</option>
           </select>
         </label>
         <button type="submit" class="btn btn-primary submit-btn">Submit Your Build</button>
@@ -186,7 +188,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Project Spotlights. Built for the car community.</p>
+    <p>&copy; 2026 Project Spotlight. Built for the car community.</p>
   </footer>
 
 </body>
